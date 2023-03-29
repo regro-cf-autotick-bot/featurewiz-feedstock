@@ -1,11 +1,11 @@
-About featurewiz
-================
+About featurewiz-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/featurewiz-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/AutoViML/featurewiz
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/featurewiz-feedstock/blob/main/LICENSE.txt)
 
 Summary: Select Best Features from your data set - any size - now with XGBoost!
 
