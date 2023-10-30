@@ -1,5 +1,5 @@
 {% set name = "featurewiz" %}
-{% set version = "0.3.3" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7ea4523e73fc839a4701eca59d76a48fbefec76dc7898c16fbeb0b25f94a4f83
+  sha256: 93ba93e8f4e21d047cd38727a7ce99e043829e0d65289361ed0c9b9316f8a9de
 
 build:
   noarch: python
