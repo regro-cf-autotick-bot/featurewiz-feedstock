@@ -1,5 +1,6 @@
 {% set name = "featurewiz" %}
 {% set version = "0.5.7" %}
+{% set python_min = python_min|default("3.7") %}
 
 package:
   name: {{ name|lower }}
@@ -11,16 +12,16 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}.*
     - pip
     - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - ipython
     - jupyter
     - xgboost >=1.5,<=1.6.2
@@ -42,14 +43,21 @@ requirements:
     - pillow >=9.0.0
     - lazytransform >=1.16
     - numexpr >=2.7.3
+    - imbalanced-learn
+    - tensorflow >=2.5
+    - dask
+  run_constrained:
+    ## NB: workaround for tensorflow.keras.layers not found
+    - keras <3
 
 test:
+  requires:
+    - python ={{ python_min }}
+    - pip
   imports:
     - featurewiz
   commands:
     - pip check
-  requires:
-    - pip
 
 about:
   home: https://github.com/AutoViML/featurewiz
@@ -60,3 +68,4 @@ about:
 extra:
   recipe-maintainers:
     - arturdaraujo
+    - mfansler
