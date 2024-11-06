@@ -11,8 +11,8 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
@@ -42,6 +42,7 @@ requirements:
     - pillow >=9.0.0
     - lazytransform >=1.16
     - numexpr >=2.7.3
+    - imbalanced-learn
 
 test:
   imports:
@@ -60,3 +61,4 @@ about:
 extra:
   recipe-maintainers:
     - arturdaraujo
+    - mfansler
