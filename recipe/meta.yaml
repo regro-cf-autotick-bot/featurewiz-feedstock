@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}.*
     - pip
     - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - ipython
     - jupyter
     - xgboost >=1.5,<=1.6.2
@@ -50,12 +50,13 @@ requirements:
     - keras <3
 
 test:
+  requires:
+    - python ={{ python_min }}
+    - pip
   imports:
     - featurewiz
   commands:
     - pip check
-  requires:
-    - pip
 
 about:
   home: https://github.com/AutoViML/featurewiz
