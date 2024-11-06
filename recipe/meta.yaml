@@ -43,6 +43,7 @@ requirements:
     - lazytransform >=1.16
     - numexpr >=2.7.3
     - imbalanced-learn
+    - tensorflow >=2.15
 
 test:
   imports:
