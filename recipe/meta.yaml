@@ -44,6 +44,9 @@ requirements:
     - numexpr >=2.7.3
     - imbalanced-learn
     - tensorflow >=2.5
+  run_constrained:
+    ## NB: workaround for tensorflow.keras.layers not found
+    - keras <3
 
 test:
   imports:
