@@ -1,5 +1,5 @@
 {% set name = "featurewiz" %}
-{% set version = "0.5.7" %}
+{% set version = "0.5.81" %}
 {% set python_min = python_min|default("3.7") %}
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/featurewiz-{{ version }}.tar.gz
-  sha256: 7922fcd9cd27fc7fdd80cda7763326b74d269966fa9110f181da7f2838dd9b9f
+  sha256: a920173159da61c6818689ce09bbfee71daacf4a7ace12d247e438c2d1fd3e3f
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
