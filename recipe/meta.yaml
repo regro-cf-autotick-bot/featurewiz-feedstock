@@ -44,6 +44,7 @@ requirements:
     - pillow >=9.0.0
     - numexpr >=2.7.3
     - tensorflow >=2.5.2
+    - lazytransform
 
 test:
   requires:
